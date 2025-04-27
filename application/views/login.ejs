@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <%- include('./includes/masterIncludes.ejs')%>
+    <title>Document</title>
+
+    <script src="/assets/js/staff-login-handler.js" defer></script>
+  </head>
+  <body>
+    <div class="container d-flex align-items-center vh-100 w-50">
+      <div class="row align-items-center login-container">
+        <div class="col-md-6">
+          <img src="/assets/images/login.jpg" alt="" style="width: 100%" />
+        </div>
+        <div class="col-md-6">
+          <div
+            class="container d-flex justify-content-center align-items-center"
+          >
+            <form id="staff-login-form">
+              <h2 class="mb-3">Login</h2>
+              <div class="mb-3 d-flex gap-3">
+                <input
+                  type="radio"
+                  name="login-type"
+                  value="std-login"
+                  id="std-login"
+                  class="login-type"
+                />
+                <label for="std-login">Student</label>
+
+                <input
+                  type="radio"
+                  name="login-type"
+                  value="admin-login"
+                  id="admin-login"
+                  class="login-type"
+                  checked
+                />
+                <label for="admin-login">Admin</label>
+              </div>
+
+              <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="username"
+                  name="username"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="password"
+                  name="password"
+                />
+              </div>
+              <div class="d-flex justify-content-center">
+                <button
+                  type="submit"
+                  class="mb-2 btn btn-outline-primary btn-sm"
+                >
+                  Submit
+                </button>
+                <button type="reset" class="btn btn-link text-danger">
+                  Reset
+                </button>
+              </div>
+              <p
+                class="text-danger text-decoration-underline hidden invalid-login-message"
+              >
+                Invalid Login Credentials
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

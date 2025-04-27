@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <%- include('../includes/masterIncludes.ejs')%>
+    <title>Document</title>
+
+    <script>
+      let studentId = <%- loggedInYear%>
+      console.log(studentId)
+    </script>
+
+    <script>
+      let s_name = <%- s_name%>
+      console.log(s_name)
+    </script>
+
+    <script src="/assets/js/student-dashboard-handler.js" defer></script>
+  </head>
+  <body>
+    <div class="admin-navbar-container">
+      <div class="container">
+        <div class="d-flex justify-content-between">
+          <div class="d-flex gap-3">
+            <button class="btn btn-outline-primary btn-sm add-att-btn">
+              My Attendance
+            </button>
+          </div>
+          <div class="d-flex gap-3 align-items-center">
+            <div class="d-flex flex-column align-items-end">
+              <h5 class="mb-0">Welcome, <span class="student-name"></span></h5>
+              <a class="btn btn-link m-0 p-0 text-danger" href="/logout"
+                >Logout</a
+              >
+            </div>
+            <div>
+              <img
+                src="/assets/images/profile.png"
+                class="profile-img"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <h4 class="mt-5">Student dashboard</h4>
+    </div>
+
+    <div class="container mt-4">
+      <div class="row">
+        <div class="col-md-3">
+          <label for="subject">Select Subject</label>
+          <select name="subject" class="form-control" id="subject"></select>
+        </div>
+
+        <div class="col-md-3">
+          <label for="date">Date</label>
+          <input type="date" value="" class="form-control date" />
+        </div>
+
+        <div class="col-md-3 align-self-end pb-1">
+          <div class="d-flex">
+            <button class="btn btn-sm btn-outline-primary search-att-btn">Search</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <table class="table table-bordered table-striped mt-4"> 
+        <thead>
+          <tr>
+            <th>Sr No</th>
+            <th>Subject</th>
+            <th>Date</th>
+            <th>Attendance</tr>
+          </tr>
+        </thead>
+        <tbody class="std-att-tbody">
+          <tr class="text-center">
+            <td colspan="4">Click The Search Button To Get Data!!!</t>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+
+    <div class="container">
+      <h4 class="mt-5">Attendance Percentage</h4>
+      <div class="row">
+        <div class="col-md-1">
+          <label for="p_month">Month</label>
+          <select name="p_month" id="p_month" class="form-control"></select>
+        </div>
+        <div class="col-md-3 align-self-end pb-1">
+          <button class="btn btn-outline-primary btn-sm search-att-percentage">Search</button>
+        </div>
+      </div>
+      <table class="table table-bordered table-striped mt-4"> 
+        <thead>
+          <tr>
+            <th>Sr No</th>
+            <th>Subject</th>
+            <th>Percentage</th>
+          </tr>
+        </thead>
+        <tbody class="std-att-per-tbody">
+          <tr class="text-center">
+            <td colspan="4">Click The Search Button To Get Data!!!</t>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
